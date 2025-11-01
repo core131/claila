@@ -1,0 +1,32 @@
+name = "caila"
+main = "worker.js"
+compatibility_date = "2023-10-30"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# UUID untuk VLESS (ganti dengan UUID Anda sendiri)
+UUID = "90cd4a77-141a-43c9-991b-08263cfe9c10"
+# Proxy IP (opsional)
+PROXYIP = ""
+# Custom CDN (opsional)
+CUSTOM_CDN = ""
+
+[[kv_namespaces]]
+binding = "VLESS_KV"
+id = "eceba7b1d957449d973d957e519e6fe4"
+preview_id = "your-kv-preview-id"
+
+[env.production]
+vars = { UUID = "your-production-uuid" }
+
+[env.staging]
+vars = { UUID = "your-staging-uuid" }
+
+# Route pattern
+[[routes]]
+pattern = "example.com/*"
+zone_name = "example.com"
+
+# Cron triggers untuk health check
+[triggers]
+crons = ["*/5 * * * *"]
