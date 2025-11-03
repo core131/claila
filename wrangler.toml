@@ -1,4 +1,4 @@
-name = "caila"
+name = "ninja"
 main = "_worker.js"
 compatibility_date = "2023-10-30"
 compatibility_flags = ["nodejs_compat"]
